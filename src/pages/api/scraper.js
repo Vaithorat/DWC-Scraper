@@ -38,6 +38,7 @@ const handler = async (req, res) => {
 
 async function sendEmail(name, price, availability) {
   // Create a Nodemailer transporter using SMTP
+  console.log("in email")
   let transporter = nodemailer.createTransport({
     host: 'smtp.gmail.com',
   port: 465, 
@@ -55,12 +56,13 @@ async function sendEmail(name, price, availability) {
     subject: 'Watch Availability Notification',
     text: `Watch: ${name}\nPrice: ${price}\nAvailability: ${availability}`
   };
-
+console.log("sending email")
   // Send email
   try {
     let info = await transporter.sendMail(mailOptions);
     console.log('Email sent successfully!', info.response);
   } catch (error) {
+    console.log("Error", error)
     console.error('Failed to send email.', error);
   }
 }
