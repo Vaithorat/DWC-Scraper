@@ -23,7 +23,7 @@ const handler = async (req, res) => {
 
       console.log(`Watch: ${name} - Price: ${price} - Availability: ${availability}`);
 
-      if (availability.toLowerCase() !== "old out" && !emailSent) {
+      if (availability.toLowerCase() !== "old out") {
         sendEmail(name, price, availability);
         emailSent = true; 
       }
