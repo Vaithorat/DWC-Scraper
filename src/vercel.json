@@ -1,6 +1,11 @@
 {
-    "crons": [{
-      "path": "/api/scraper",
-      "schedule": "* * * * *"
-    }]
-  }
+  "version": 2,
+  "builds": [
+    { "src": "/api/scraper.js", "use": "@vercel/node" }
+  ],
+  "routes": [
+    { "src": "/api/scraper", "dest": "/api/scraper.js" },
+    { "src": "/cron", "dest": "/api/scraper.js" }
+  ],
+  "cron": "* * * * *"
+}
