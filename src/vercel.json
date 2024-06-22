@@ -1,12 +1,6 @@
 {
-    "cron": {
-      "jobs": [
-        {
-          "name": "call-api-periodically",
-          "schedule": "* * * * *",
-          "url": "/api/cron"
-        }
-      ]
-    }
+    "crons": [{
+      "path": "/api/scraper",
+      "schedule": "* * * * *"
+    }]
   }
-  
