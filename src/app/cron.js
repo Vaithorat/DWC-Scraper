@@ -3,7 +3,7 @@ import axios from "axios";
 async function callApi() {
   try {
     const response = await axios.get(
-      "https://your-vercel-app.vercel.app/api/scraper"
+      "https://dwc-scraper.vercel.app/api/scraper"
     );
     console.log("API call successful:", response.data);
   } catch (error) {
