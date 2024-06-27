@@ -34,7 +34,7 @@ const handler = async (req, res) => {
       }
     });
 
-    res.status(200).json({ message: name, price, availability });
+    res.status(200).json({ message: { name, price, availability } });
   } catch (error) {
     console.error(`Error fetching the URL: ${error}`);
     res.status(500).json({ error: "Failed to fetch the URL" });
